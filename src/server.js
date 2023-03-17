@@ -1,8 +1,12 @@
 const express = require('express')
-const mongodb = require('mongoose')
 const path = require('path')
-
+const db = require('./database/db')
+const routes = require('./routes')
 const app = express()
+
+db.connect()
+
+
 
 // Criando um template engine (EJS) - Por si só ele ja defini os arquivos estaticos (HTML)
 app.set('view engine', 'ejs')
@@ -14,15 +18,8 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 app.use(express.urlencoded({ extended: true})) // recebendo posts de formulario  (Metodo Post)
 
-
-//rotas
-
-app.get('/',(req, res) =>{
-    res.render('index',{
-        title:'Project MongoDB'
-    })
-})
-
+// Definindo as rotas
+app.use('/', routes)
 
 // 404 error (not found) - Rota nao existe
 
