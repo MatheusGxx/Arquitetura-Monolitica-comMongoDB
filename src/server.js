@@ -1,12 +1,12 @@
 const express = require('express')
 const path = require('path')
+const mongoose = require('mongoose')
+
 const db = require('./database/db')
-const routes = require('./routes')
+const routes = require('./routes/rotas')
 const app = express()
 
 db.connect()
-
-
 
 // Criando um template engine (EJS) - Por si só ele ja defini os arquivos estaticos (HTML)
 app.set('view engine', 'ejs')

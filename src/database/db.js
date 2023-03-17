@@ -1,7 +1,7 @@
 const MongoDB = require('mongoose')
 
 function connect(){
-    MongoDB.connect('mongodb://localhost:27017/')
+    MongoDB.connect('mongodb://localhost:27017/projeto-crud')
 
     const db = MongoDB.connection
     

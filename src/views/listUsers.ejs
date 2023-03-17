@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<%- include('partials/head.ejs') %> 
+<body>
+   
+<%- include('partials/navbar.ejs') %> <!-- Barra de Navegador  -->
+
+<ul>
+    <% users.forEach((user) => { %>
+    <li>
+        <%= user.name %> - <%= user.email %> - Idade: <%= user.age %>
+    </li>
+    <% }) %>
+</ul>
+
+
+    <%- include('partials/javascript.ejs') %>
+</body>
+</html> 
