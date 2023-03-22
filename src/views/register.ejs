@@ -3,9 +3,10 @@
 <%- include('partials/head.ejs') %>
 <body>
 
+<h1> <%= title %> </h1>
 <%- include('partials/navbar.ejs') %> <!-- Barra de Navegador  -->
   
-<% if (message) { %>
+<% if (typeof message !== 'undefined') { %>
   <%= message %>
 <% } %>
 
